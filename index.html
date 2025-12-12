@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         :root {
             --primary-gradient: linear-gradient(135deg, #3498db 0%, #f07000 100%);
@@ -244,7 +245,7 @@
 <body>
     <div class="container">
         <header>
-            <div class="logo">☀️</div>
+            <div class="logo"><i data-lucide="sun" style="width: 40px; height: 40px;"></i></div>
             <h1>心晴日記</h1>
             <p class="tagline">把心情寫下來，讓心慢慢放晴</p>
         </header>
@@ -257,7 +258,7 @@
 
         <!-- FAQ Section -->
         <section id="faq">
-            <h2><span class="icon">❓</span> 常見問題</h2>
+            <h2><i data-lucide="help-circle" class="icon"></i> 常見問題</h2>
 
             <div class="faq-item">
                 <div class="faq-question">Q: 如何開始使用心晴日記？</div>
@@ -292,11 +293,11 @@
 
         <!-- Contact Section -->
         <section id="contact">
-            <h2><span class="icon">📧</span> 聯絡我們</h2>
+            <h2><i data-lucide="mail" class="icon"></i> 聯絡我們</h2>
             <p style="color: var(--text-secondary); margin-bottom: 16px;">如果你有任何問題、建議或需要協助，歡迎與我們聯繫：</p>
 
             <div class="contact-item">
-                <span class="icon">✉️</span>
+                <i data-lucide="send" class="icon"></i>
                 <span>電子郵件：<a href="mailto:tzuyun.h@icloud.com">tzuyun.h@icloud.com</a></span>
             </div>
 
@@ -307,7 +308,7 @@
 
         <!-- Privacy Policy Section -->
         <section id="privacy">
-            <h2><span class="icon">🔒</span> 隱私權政策</h2>
+            <h2><i data-lucide="shield-check" class="icon"></i> 隱私權政策</h2>
             <div class="policy-content">
                 <p><strong>最後更新日期：2024 年 12 月</strong></p>
 
@@ -401,6 +402,9 @@
                 }
             });
         });
+
+        // Initialize Lucide icons
+        lucide.createIcons();
     </script>
 </body>
 
