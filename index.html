@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心晴日記 - 支援中心</title>
+    <meta name="description" content="心晴日記 App 支援中心 - 常見問題、聯絡我們、隱私權政策">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #3498db 0%, #f07000 100%);
+            --evening-gradient: linear-gradient(135deg, #f3904f 0%, #3b4371 100%);
+            --night-gradient: linear-gradient(135deg, #2c3e50 0%, #000000 100%);
+            --card-bg: rgba(255, 255, 255, 0.1);
+            --card-border: rgba(255, 255, 255, 0.2);
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.8);
+            --text-muted: rgba(255, 255, 255, 0.6);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            background: var(--evening-gradient);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            margin-bottom: 20px;
+            font-size: 40px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .tagline {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--text-primary);
+        }
+
+        /* Sections */
+        section {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 24px;
+        }
+
+        section h2 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        section h2 .icon {
+            font-size: 1.5rem;
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid var(--card-border);
+            padding: 16px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .faq-item:first-of-type {
+            padding-top: 0;
+        }
+
+        .faq-question {
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Contact */
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            color: var(--text-secondary);
+        }
+
+        .contact-item .icon {
+            font-size: 1.2rem;
+        }
+
+        .contact-item a {
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Privacy Policy */
+        .policy-content p {
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+        }
+
+        .policy-content h3 {
+            font-size: 1.1rem;
+            margin: 24px 0 12px;
+            color: var(--text-primary);
+        }
+
+        .policy-content ul {
+            margin-left: 20px;
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+        }
+
+        .policy-content li {
+            margin-bottom: 8px;
+        }
+
+        /* App Download */
+        .app-badge {
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .app-badge img {
+            height: 50px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--text-secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            header {
+                padding: 40px 20px 30px;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            section {
+                padding: 24px 20px;
+            }
+
+            nav {
+                gap: 8px;
+            }
+
+            nav a {
+                padding: 6px 12px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">☀️</div>
+            <h1>心晴日記</h1>
+            <p class="tagline">把心情寫下來，讓心慢慢放晴</p>
+        </header>
+
+        <nav>
+            <a href="#faq" class="active">常見問題</a>
+            <a href="#contact">聯絡我們</a>
+            <a href="#privacy">隱私權政策</a>
+        </nav>
+
+        <!-- FAQ Section -->
+        <section id="faq">
+            <h2><span class="icon">❓</span> 常見問題</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 如何開始使用心晴日記？</div>
+                <div class="faq-answer">下載 App 後，使用 Google 帳號登入即可開始記錄你的日記。首次使用會有引導說明。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 我的日記資料安全嗎？</div>
+                <div class="faq-answer">是的！你的日記完全私密，只有你自己可以查看。所有資料都安全儲存在雲端，不會與任何第三方分享。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: AI 分析功能是怎麼運作的？</div>
+                <div class="faq-answer">當你撰寫完日記後，AI 會分析你的文字內容，幫助你了解自己的情緒狀態，並自動產生相關的標籤。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 可以補寫過去的日記嗎？</div>
+                <div class="faq-answer">可以！在日曆上選擇過去的日期，點擊「補寫日記」即可為那一天撰寫日記。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 換手機後日記還會在嗎？</div>
+                <div class="faq-answer">會的！只要使用相同的 Google 帳號登入，你的所有日記都會自動同步到新裝置。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 如何設定每日提醒？</div>
+                <div class="faq-answer">前往「我的」頁面，開啟「每日提醒」功能，並選擇你希望收到提醒的時間。</div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2><span class="icon">📧</span> 聯絡我們</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 16px;">如果你有任何問題、建議或需要協助，歡迎與我們聯繫：</p>
+
+            <div class="contact-item">
+                <span class="icon">✉️</span>
+                <span>電子郵件：<a href="mailto:support@example.com">support@example.com</a></span>
+            </div>
+
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 20px;">
+                我們通常會在 1-2 個工作天內回覆您的訊息。
+            </p>
+        </section>
+
+        <!-- Privacy Policy Section -->
+        <section id="privacy">
+            <h2><span class="icon">🔒</span> 隱私權政策</h2>
+            <div class="policy-content">
+                <p><strong>最後更新日期：2024 年 12 月</strong></p>
+
+                <p>心晴日記（以下簡稱「本 App」）非常重視您的隱私。本隱私權政策說明我們如何收集、使用和保護您的個人資料。</p>
+
+                <h3>1. 資料收集</h3>
+                <p>我們收集的資料包括：</p>
+                <ul>
+                    <li><strong>帳號資訊</strong>：透過 Google 登入取得的基本資料（名稱、電子郵件、頭像）</li>
+                    <li><strong>日記內容</strong>：您撰寫的日記文字和快樂膠囊</li>
+                    <li><strong>使用資料</strong>：App 設定偏好（如提醒時間）</li>
+                </ul>
+
+                <h3>2. 資料使用</h3>
+                <p>我們使用您的資料來：</p>
+                <ul>
+                    <li>提供並維護 App 服務</li>
+                    <li>進行 AI 情緒分析（您的日記內容會被傳送至 AI 進行分析）</li>
+                    <li>同步您的資料到不同裝置</li>
+                    <li>發送每日提醒通知（如您有開啟）</li>
+                </ul>
+
+                <h3>3. 資料儲存與安全</h3>
+                <ul>
+                    <li>您的資料儲存在 Google Firebase 雲端服務</li>
+                    <li>所有傳輸均使用加密連線</li>
+                    <li>只有您本人可以存取您的日記內容</li>
+                </ul>
+
+                <h3>4. 資料分享</h3>
+                <p>我們不會將您的個人資料出售或分享給第三方，除非：</p>
+                <ul>
+                    <li>為提供 AI 分析服務所必需</li>
+                    <li>法律要求時</li>
+                </ul>
+
+                <h3>5. 您的權利</h3>
+                <p>您可以隨時：</p>
+                <ul>
+                    <li>刪除您的日記</li>
+                    <li>登出並停止使用服務</li>
+                    <li>聯繫我們要求刪除您的帳號和所有資料</li>
+                </ul>
+
+                <h3>6. 聯絡方式</h3>
+                <p>如有任何隱私相關問題，請聯繫：<a href="mailto:support@example.com"
+                        style="color: var(--text-primary);">support@example.com</a></p>
+            </div>
+        </section>
+
+        <footer>
+            <p>心晴日記 v0.1</p>
+            <p style="margin-top: 8px;">© 2024 心晴日記. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+
+                // Update active state
+                document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Update active nav on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
